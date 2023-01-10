@@ -1,0 +1,45 @@
+﻿@page
+@model JewelryShop.Pages.Vanzari.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Vanzare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Vanzare.ID" />
+            <div class="form-group">
+                <label asp-for="Vanzare.MembruID" class="control-label"></label>
+                <select asp-for="Vanzare.MembruID" class="form-control" asp-items="ViewBag.MembruID"></select>
+                <span asp-validation-for="Vanzare.MembruID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vanzare.BijuterieID" class="control-label"></label>
+                <select asp-for="Vanzare.BijuterieID" class="form-control" asp-items="ViewBag.BijuterieID"></select>
+                <span asp-validation-for="Vanzare.BijuterieID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vanzare.DataCumparare" class="control-label"></label>
+                <input asp-for="Vanzare.DataCumparare" class="form-control" />
+                <span asp-validation-for="Vanzare.DataCumparare" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
