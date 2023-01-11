@@ -29,7 +29,7 @@ namespace JewelryShop.Pages.Vanzari
                 return NotFound();
             }
 
-            var vanzare = await _context.Vanzari.FirstOrDefaultAsync(m => m.ID == id);
+            var vanzare = await _context.Vanzari.Include(b => b.Membru).Include(b => b.Bijuterie).FirstOrDefaultAsync(m => m.ID == id);
 
             if (vanzare == null)
             {

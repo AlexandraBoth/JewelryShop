@@ -8,11 +8,11 @@ namespace JewelryShop.Models
         public int ID { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s-]*$", ErrorMessage =
-        "Numele trebuie sa inceapa cu majuscula (ex. Andreea")]
+        "Numele trebuie sa inceapa cu majuscula (ex. Denisa")]
         [StringLength(20, MinimumLength = 3)]
         public string? Nume { get; set; }
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s-]*$", ErrorMessage =
-        "Prenumele trebuie sa inceapa cu majuscula (ex. Popescu")]
+        "Prenumele trebuie sa inceapa cu majuscula (ex. Pasca")]
         [StringLength(20, MinimumLength = 3)]
         public string? Prenume { get; set; }
         [StringLength(50)]

@@ -1,4 +1,6 @@
-﻿namespace JewelryShop.Models
+﻿using JewelryShop.Migrations;
+
+namespace JewelryShop.Models
 {
     public class BijuterieData
     {

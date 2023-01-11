@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using JewelryShop.Data;
 using JewelryShop.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace JewelryShop.Pages.Bijuterii
+
 {
+    [Authorize(Roles = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly JewelryShop.Data.JewelryShopContext _context;

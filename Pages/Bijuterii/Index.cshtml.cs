@@ -22,14 +22,14 @@ namespace JewelryShop.Pages.Bijuterii
         public IList<Bijuterie> Bijuterie { get; set; } = default!;
 
        
-            public BijuterieData BijuterieD { get; set; }
+        public BijuterieData BijuterieD { get; set; }
         public int BijuterieID { get; set; }
         public int BrandID { get; set; }
 
         public string NumeSort { get; set; }
       
         public string CurrentFilter { get; set; }
-        public async Task OnGetAsync(int? id, int? tipID, string sortOrder, string searchString)
+        public async Task OnGetAsync(int? id, int? TipID, string sortOrder, string searchString)
         {
             BijuterieD = new BijuterieData();
 
@@ -49,8 +49,8 @@ namespace JewelryShop.Pages.Bijuterii
             {
                 BijuterieD.Bijuterii = BijuterieD.Bijuterii.Where(s => s.Brand.Type.Contains(searchString)
 
-            || s.Brand.Type.Contains(searchString)
-             || s.Nume.Contains(searchString));
+                || s.Brand.Type.Contains(searchString)
+                || s.Nume.Contains(searchString));
             
             }
 

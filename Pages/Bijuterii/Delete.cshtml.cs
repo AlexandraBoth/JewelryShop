@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using JewelryShop.Data;
 using JewelryShop.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace JewelryShop.Pages.Bijuterii
 {
+    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
         private readonly JewelryShop.Data.JewelryShopContext _context;
@@ -29,7 +32,7 @@ namespace JewelryShop.Pages.Bijuterii
                 return NotFound();
             }
 
-            var bijuterie = await _context.Bijuterie.FirstOrDefaultAsync(m => m.ID == id);
+            var bijuterie = await _context.Bijuterie.Include(b => b.Categorie).Include(b => b.Brand).Include(b => b.Colectie).FirstOrDefaultAsync(m => m.ID == id);
 
             if (bijuterie == null)
             {

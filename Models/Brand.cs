@@ -8,6 +8,7 @@ namespace JewelryShop.Models
         public int ID { get; set; }
         [Display(Name = "Brand")]
         public string Type { get; set; }
+        public string Gen { get; set; }
         public ICollection<Bijuterie>? Bijuterii { get; set; }
     }
 }

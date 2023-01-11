@@ -8,9 +8,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JewelryShop.Data;
 using JewelryShop.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace JewelryShop.Pages.Colectii
 {
+    [Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
         private readonly JewelryShop.Data.JewelryShopContext _context;

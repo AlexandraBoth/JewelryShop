@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using JewelryShop.Data;
 using JewelryShop.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace JewelryShop.Pages.Branduri
 {
+    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
         private readonly JewelryShop.Data.JewelryShopContext _context;

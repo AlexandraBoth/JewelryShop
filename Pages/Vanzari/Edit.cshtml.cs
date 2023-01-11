@@ -36,8 +36,8 @@ namespace JewelryShop.Pages.Vanzari
                 return NotFound();
             }
             Vanzare = vanzare;
-           ViewData["BijuterieID"] = new SelectList(_context.Bijuterie, "ID", "ID");
-           ViewData["MembruID"] = new SelectList(_context.Membru, "ID", "ID");
+           ViewData["BijuterieID"] = new SelectList(_context.Bijuterie, "ID", "Nume");
+           ViewData["MembruID"] = new SelectList(_context.Membru, "ID", "NumeComplet");
             return Page();
         }
 
